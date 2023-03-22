@@ -11,7 +11,6 @@ const items = require("./models/items");
 const { Collection } = require("mongoose");
 
 // routes content
-app.use('/',require("./routes"));
 
 app.set('view engine', 'ejs');
 app.set("views","./views");
@@ -47,14 +46,14 @@ var arr = [
 // putting data on the screen
 app.get("/", function (req, res) {
 
-    var data=items.find({},function(err,items){
+    items.find({},function(err,items){
         if(err){
             console.log("error happening");
             return ;
         }
-        return res.render("home", {
-            // title:"nitesh",
-            // dues: items,
+        return res.render('home', {
+            title:"nitesh",
+            dues: items
         });
     }); 
 
