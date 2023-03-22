@@ -1,8 +1,6 @@
 <html>
-  
   <head>
-     <title><%= title %>
-     </title>
+     <title><%= title %></title>
     <script
       src="https://kit.fontawesome.com/4f9d871909.js"
       crossorigin="anonymous"
@@ -47,7 +45,15 @@
       </form>
       </div>
       <div id="list">
-        
+          <%for(var i of dues){%>            
+            <div id="items">             
+                <input type="checkbox" id="checkbox" >             
+                <div id="item_data"><%=i.description%></div>             
+                <div id="item_date"><%=i.date%></div>             
+                <div id="item_category"><%=i.category%></div>           
+            </div>           
+          <%}%>
+
       </div>
     </main>
 
