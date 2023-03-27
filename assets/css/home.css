@@ -121,6 +121,12 @@ h2{
 }
 #deletet{
     background-color: red;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin: 5px;
 }
 #list{
     height: 290px;

@@ -17,6 +17,7 @@ app.set("views", "./views");
 app.use(express.urlencoded());
 app.use(express.static("assets"));
 
+
 // fetching data from database
 app.post("/create_items", function (req, res) {
   const newUser = new items({
@@ -47,18 +48,18 @@ app.get("/", function (req, res) {
   });
 });
 
-// to delete data
-// app.get("/delete-item", function (req, res) {
-//     let id=req.query.id;
-//     Contact.findByIdAndDelete(id,function(err){
-//         if(err){
-//           console.log("error in deleting element");
-//           return;
-//         }
-//         return res.redirect("back");
-//     });
-    
-//   });
+// deleting items
+app.get("/delete-items", function (req, res) {
+  let id=req.query.id;
+  items.findByIdAndDelete(id,function(err){
+      if(err){
+        console.log("error in deleting element");
+        return;
+      }
+      return res.redirect("back");
+  });
+});
+
 
 app.listen(port, function (err) {
   if (err) {

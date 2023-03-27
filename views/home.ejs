@@ -40,26 +40,30 @@
           <i class="fa-sharp fa-solid fa-plus"></i>
           ADD TASK
         </button>
-        <button id="deletet">
+        <!-- <button id="deletet">
           <i class="fa-solid fa-trash-can"></i>
           DELETE TASKS
-        </button>
+        </button> -->
       </form>
       </div>
       <div id="list">
           <%for(var i of dues){%>            
             <div id="items">             
-                <input type="checkbox" class="checkbox"  >             
+                <!-- <input type="checkbox" class="checkbox" onclick="func()" >              -->
                 <div id="item_data"><%=i.description%></div>             
                 <div id="item_date"><%=i.date%></div>             
-                <div id="item_category"><%=i.category%></div>           
+                <div id="item_category"><%=i.category%></div>   
+                <button id="deletet" >
+                  <a href="/delete-items/?id=<%= i._id%>">
+                  <i class="fa-solid fa-trash-can"></i>
+                  </a>
+                </button>   
             </div>           
           <%}%>
 
       </div>
     </main>
     <script src="../assets/js/home.js"></script>
-
   </body>
 </html>
 
