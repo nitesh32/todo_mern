@@ -8,7 +8,7 @@
     <link href="/css/home.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <footer id="name"><b> TODO App </b></footer>
+    <header id="name"><b> TODO App </b></header>
     <main id="main">
       <form action="/create_items" method="post">
       <h2 class="top_input">Description</h2>
@@ -17,6 +17,7 @@
         name="desc"
         placeholder="What do you need to do ?"
         id="description"
+        required
       />
       <div id="select_date">
         <div id="select">
@@ -25,6 +26,7 @@
             <option value="personal">Personal</option>
             <option value="work">Work</option>
             <option value="school">School</option>
+            <option value="cleaning">Cleaning</option>
             <option value="other">Other</option>
           </select>
         </div>
@@ -47,7 +49,7 @@
       <div id="list">
           <%for(var i of dues){%>            
             <div id="items">             
-                <input type="checkbox" id="checkbox" >             
+                <input type="checkbox" class="checkbox"  >             
                 <div id="item_data"><%=i.description%></div>             
                 <div id="item_date"><%=i.date%></div>             
                 <div id="item_category"><%=i.category%></div>           
@@ -56,8 +58,8 @@
 
       </div>
     </main>
+    <script src="../assets/js/home.js"></script>
 
-    <script type="text/javascript" src="/js/home.js"></script>
   </body>
 </html>
 
